@@ -7,12 +7,12 @@ from .utils import load_aot, load_jit, make_cpp_args
 
 if TYPE_CHECKING:
     import torch
-    from tvm_ffi.module import Module
+    from tvm_ffi.module import Module 
 
 DEFAULT_BLOCK_QUOTA = 2
 
 
-@functools.cache
+@functools.cache 
 def _jit_hicache_module(*, element_size: int, unroll: int, block_quota: int) -> Module:
     args = make_cpp_args(
         element_size,

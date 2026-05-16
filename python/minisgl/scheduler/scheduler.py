@@ -188,7 +188,7 @@ class Scheduler(SchedulerIOMixin):
         elif isinstance(msg, AbortBackendMsg):
             logger.debug_rank0("Aborting request %d", msg.uid)
             req_to_free = self.prefill_manager.abort_req(msg.uid)
-            req_to_free = req_to_free or self.decode_manager.abort_req(msg.uid)
+            req_to_free = req_to_free or self.decode_manager.abort_req(msg.uid) 
             if req_to_free is not None:
                 self._free_req_resources(req_to_free)
         else:

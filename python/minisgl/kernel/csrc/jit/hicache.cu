@@ -32,7 +32,7 @@ template <int kUnit> using PackageType = decltype(get_mem_package<kUnit>());
 
 SGL_DEVICE uint1 load_nc(const uint1 *__restrict__ src) {
   uint32_t tmp;
-  asm volatile("ld.global.L1::no_allocate.b32 %0,[%1];" : "=r"(tmp) : "l"(src));
+  asm volatile("ld.global.L1::no_allocate.b32 %0,[%1];" : "=r"(tmp) : "l"(src)); 
   return uint1{tmp};
 }
 
@@ -62,7 +62,7 @@ SGL_DEVICE void store_nc(uint2 *__restrict__ dst, const uint2 &value) {
   uint32_t tmp1 = value.y;
   asm volatile("st.global.L1::no_allocate.v2.b32 [%0],{%1,%2};" ::"l"(dst),
                "r"(tmp0), "r"(tmp1));
-}
+} 
 
 SGL_DEVICE void store_nc(uint4 *__restrict__ dst, const uint4 &value) {
   uint32_t tmp0 = value.x;

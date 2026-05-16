@@ -11,7 +11,7 @@ from minisgl.utils import align_down
 
 from .base import BaseCacheHandle, BasePrefixCache, InsertResult, MatchResult, SizeInfo
 
-KEY_FN: TypeAlias = Callable[[torch.Tensor], Any]
+KEY_FN: TypeAlias = Callable[[torch.Tensor], Any] 
 
 
 class RadixTreeNode:

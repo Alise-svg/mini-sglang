@@ -11,7 +11,7 @@ class NaiveCacheHandle(BaseCacheHandle):
 
     def get_matched_indices(self) -> torch.Tensor:
         return self.empty_tensor
-
+ 
 
 class NaivePrefixCache(BasePrefixCache):
     def __init__(self, device: torch.device):

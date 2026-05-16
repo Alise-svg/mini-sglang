@@ -1,7 +1,7 @@
-from __future__ import annotations
+from __future__ import annotations 
 
 from dataclasses import dataclass, field
-from typing import TYPE_CHECKING, List, Tuple
+from typing import TYPE_CHECKING, List, Tuple 
 
 import torch
 from minisgl.core import Batch, Req
@@ -69,7 +69,7 @@ class PrefillAdder:
         cache_handle: BaseCacheHandle,
         table_idx: int,
         cached_len: int,
-    ) -> Req:
+    ) -> Req: 
         remain_len = pending_req.input_len - cached_len
         chunk_size = min(self.token_budget, remain_len)
         is_chunked = chunk_size < remain_len

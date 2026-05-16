@@ -118,7 +118,7 @@ class BasePrefixCache(ABC):
         """
 
     @abstractmethod
-    def evict(self, size: int) -> torch.Tensor:
+    def evict(self, size: int) -> torch.Tensor: 
         """
         Evict some prefixes from the cache to free up space.
         This operation will modify the cache.
